@@ -1,0 +1,25 @@
+inherit kf5
+
+NAME="kdecoration2"
+VERSION=5.8.5
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE window decorations library"
+DESCRIPTION="KDecoration2 is a library to create window decorations. These
+window decorations can be used by for example an X11 based window manager
+which re-parents a Client window to a window decoration frame."
+SRC_URI="mirror://kde/stable/plasma/${VERSION}/kdecoration-${VERSION}.tar.xz"
+SRC_DIR="kdecoration-${VERSION}"
+
+PKG_NAMES="libkdecoration2_5 libkdecoration2-devel"
+libkdecoration2_5_CONTENTS="
+	usr/bin/cygkdecorations2*-5.dll
+	usr/share/doc/kdecoration2/
+"
+libkdecoration2_devel_REQUIRES="libQt5Core-devel libQt5Gui-devel"
+libkdecoration2_devel_CONTENTS="
+	usr/include/KDecoration2/
+	usr/include/KF5/kdecoration2_version.h
+	usr/lib/cmake/KDecoration2/
+	usr/lib/libkdecorations2*.dll.a
+"
